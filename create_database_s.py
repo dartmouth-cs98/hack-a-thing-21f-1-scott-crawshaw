@@ -7,7 +7,7 @@ import sys
 def create_connection():
     """ create a database connection to a SQLite database """
     try:
-        conn = sqlite3.connect("wifi_aps.db")
+        conn = sqlite3.connect("wifi_aps_s.db")
         cursor = conn.cursor()
         cursor.execute("CREATE TABLE IF NOT EXISTS wifi (bssid text PRIMARY KEY, name text);")
         return cursor
@@ -24,7 +24,6 @@ def get_ap_id():
 # adapted from https://www.sqlitetutorial.net/sqlite-python/insert/
 def insert_ap(name, cursor):
     bssid = get_ap_id()
-    print(bssid)
     if len(bssid) > 0:
         try:
             cursor.execute("INSERT INTO wifi (bssid, name) VALUES (?,?);", (bssid, name))
