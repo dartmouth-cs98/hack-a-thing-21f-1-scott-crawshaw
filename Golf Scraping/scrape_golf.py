@@ -6,7 +6,7 @@ content = requests.get(URL).content.decode('UTF-8')
 
 goal_strs = ["teetime='3:2", "teetime='3:1", "teetime='3:0", "teetime='2", "teetime='1", "teetime='12", "teetime='11"]
 for goal in goal_strs:
-    if 0==0 or goal in content:
+    if goal in content:
         # code adapted from https://www.twilio.com/docs/sms/quickstart/python
         account_sid = open("account_sid.txt", "r").readline()
         auth_token = open("auth_token.txt", "r").readline()
