@@ -1,25 +1,5 @@
-# Hack Technology / Project Attempted
+## Repo Guide
+For my project, I built two seperate tools: one for wifi scanning, and one for webscraping & sms. View their respective folders for more information, including a detailed readme.
 
-
-## What you built? 
-
-TODO: Short description of what you attempted to build
-
-Include some screenshots.
-[How?](https://help.github.com/articles/about-readmes/#relative-links-and-image-paths-in-readme-files)
-
-## Who Did What?
-
-TODO: who worked on what part?
-
-## What you learned
-
-TODO: what worked / what didn't work
-
-## Authors
-
-TODO: list of authors
-
-## Acknowledgments
-
-TODO: cite any tutorials followed here
+## Author
+Scott Crawshaw '22

@@ -18,6 +18,7 @@ def create_connection():
 def get_ap_id():
     output = check_output(["airport", "-s"]).decode('UTF-8')
     access_points = airport.parse(output)
+    # sorting code adapted from https://stackoverflow.com/questions/26924812/python-sort-list-of-json-by-value
     sorted_points = sorted(access_points, key=lambda o: o['rssi'], reverse=True)
     nearest_ap = list(filter(lambda o: o["ssid"]=="eduroam",sorted_points))[0]
     if "bssid" in nearest_ap:
