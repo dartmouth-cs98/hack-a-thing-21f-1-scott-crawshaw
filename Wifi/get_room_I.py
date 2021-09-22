@@ -9,7 +9,6 @@ def create_connection():
     try:
         conn = sqlite3.connect("wifi_aps_i.db")
         cursor = conn.cursor()
-        cursor.execute("CREATE TABLE IF NOT EXISTS wifi (bssid text PRIMARY KEY, name text);")
         return cursor
     except sqlite3.Error as e:
         sys.exit(e)
@@ -17,22 +16,27 @@ def create_connection():
 def get_ap_id():
     output = check_output(["airport", "-I"]).decode('UTF-8')
     nearest_ap = airport.parse(output)
-    return nearest_ap["bssid"][:-3]
+    if "bssid" in nearest_ap:
+        return nearest_ap["bssid"][:-3]
+    else:
+        sys.exit("No wifi found.")
 
-# adapted from https://www.sqlitetutorial.net/sqlite-python/insert/
-def insert_ap(name, cursor):
+def print_ap(cursor):
     bssid = get_ap_id()
     if len(bssid) > 0:
         try:
-            cursor.execute("INSERT INTO wifi (bssid, name) VALUES (?,?);", (bssid, name))
+            cursor.execute("SELECT name FROM wifi WHERE bssid=?;", (bssid,))
+            rows = cursor.fetchall()
+            if len(rows) > 0:
+                print(rows[0][0])
+            else:
+                print("Cannot determine location. Please try again.")
         except sqlite3.Error as e:
             print(e)
     else:
         print("Could not locate wifi access point. Please try again.")
-    
+
 cursor = create_connection()
 while True:
-    name = input("Name of current room: ")
-    insert_ap(name, cursor)
-
-
+    name = input("Hit enter to get name of room. ")
+    print_ap(cursor)
