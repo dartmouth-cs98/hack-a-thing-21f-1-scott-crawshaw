@@ -16,8 +16,8 @@ I attempted this project because of its possible use in one of my app ideas. Ess
   
 Unfortunately, the tool did not work as well as I would hope. I tested it in both the library and the LSC, and both resulted in a subpar outcome. It sometimes produced the correct result, but often, the access point my computer was connected to would vary each time I entered a room. On the bright side, it does provide a relatively good estimate of the user's location, even if it gets mixed up between two adjacent rooms. A test of the app using 3 LSC rooms can be seen below.
 
-![Wifi Scan Example](./scan\ wifi/wifi_scan_test.png?raw=true "Wifi Scanning Example")  
-![Connected Wifi Example](./connected\ wifi/connected_wifi_test.png?raw=true "Connected Wifi Example")
+![Wifi Scan Example](https://github.com/dartmouth-cs98/hack-a-thing-21f-1-scott-crawshaw/blob/main/Wifi/scan%20wifi/wifi_scan_test.png?raw=true "Wifi Scanning Example")  
+![Connected Wifi Example](https://github.com/dartmouth-cs98/hack-a-thing-21f-1-scott-crawshaw/blob/main/Wifi/connected%20wifi/connected_wifi_test.png?raw=true "Connected Wifi Example")
 
 ## Authors
 
