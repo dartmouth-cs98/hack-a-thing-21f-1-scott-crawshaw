@@ -12,7 +12,7 @@ Scott Crawshaw completed the project alone.
 
 ## What you learned
 
-I attempted this project because of its possible use in one of my app ideas. Essentially, I would like to make an app that functions like apple's Find My Friends, but rather than providing a dot on a map, it provides the name of the room the user is in. This would only work at Dartmouth, where each room has a wifi access point, so the app could simply determine the BSSID of the nearest access point and reference a table to convert it to a name.  
+I attempted this project because of its possible use in one of my app ideas. Essentially, I would like to make an app that functions like Apple's Find My Friends, but rather than providing a dot on a map, it provides the name of the room the user is in. This would only work at Dartmouth, where each room has a wifi access point, so the app could simply determine the BSSID of the nearest access point and reference a table to convert it to a name.  
   
 Unfortunately, the tool did not work as well as I would hope. I tested it in both the library and the LSC, and both resulted in a subpar outcome. It sometimes produced the correct result, but often, the access point my computer was connected to would vary each time I entered a room. On the bright side, it does provide a relatively good estimate of the user's location, even if it gets mixed up between two adjacent rooms. A test of the app using 3 LSC rooms can be seen below.
 
