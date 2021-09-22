@@ -12,16 +12,16 @@ I created a python script that scrapes the tee time website, checking to see if 
 
 ## Who Did What?
 
-TODO: who worked on what part?
+Scott Crawshaw completed the project alone.
 
 ## What you learned
 
-TODO: what worked / what didn't work
+This project taught me a great deal about web scraping & twilio, two tools that may prove useful in future projects. I found that twilio was simple to setup and use, and that PythonAnywhere is an excellent place to host python scripts. I had used these tools lighly in the past, but this provided a much greater insight into how to apply these resources. This project was certianly quicker than the wifi one, but may very well be more applicable for the group project, as automated sms is a powerful tool.
 
 ## Authors
 
-TODO: list of authors
+Scott Crawshaw
 
 ## Acknowledgments
 
-TODO: cite any tutorials followed here
+To help with the twilio sms code, I used the following twilio tutorial https://www.twilio.com/docs/sms/quickstart/python.
