@@ -1,5 +1,5 @@
 from subprocess import check_output
-import jc.parsers.airport_s as airport
+import jc.parsers.airport as airport
 import sqlite3
 import sys
 
@@ -7,23 +7,21 @@ import sys
 def create_connection():
     """ create a database connection to a SQLite database """
     try:
-        conn = sqlite3.connect("wifi_aps_s.db")
+        conn = sqlite3.connect("wifi_aps_i.db")
         cursor = conn.cursor()
         return cursor
     except sqlite3.Error as e:
         sys.exit(e)
 
 def get_ap_id():
-    output = check_output(["airport", "-s"]).decode('UTF-8')
-    access_points = airport.parse(output)
-    # sorting code adapted from https://stackoverflow.com/questions/26924812/python-sort-list-of-json-by-value
-    sorted_points = sorted(access_points, key=lambda o: o['rssi'], reverse=True)
-    nearest_ap = list(filter(lambda o: o["ssid"]=="eduroam",sorted_points))[0]
+    output = check_output(["airport", "-I"]).decode('UTF-8')
+    nearest_ap = airport.parse(output)
     if "bssid" in nearest_ap:
         return nearest_ap["bssid"][:-3]
     else:
         sys.exit("No wifi found.")
 
+# adapted from https://www.sqlitetutorial.net/sqlite-python/sqlite-python-select/
 def print_ap(cursor):
     bssid = get_ap_id()
     if len(bssid) > 0:
